@@ -94,7 +94,7 @@ int count_zeros(int ncols, float* row_data, function* parent) {
 
 /* Fill the bitmap denoting when the given bitmap_value appears along with an easier to parse integer array replication
    if the value "true" is true, then bitmaps are true bit maps (1 = True). If "true" is false, then the bitmap is inverted */
-int fill_bitmap(int ncols, float* row_data, float bitmap_value, int true, unsigned char* bitmap, int* array, function* parent) {
+int fill_bitmap(int ncols, float* row_data, float bitmap_value, int true_, unsigned char* bitmap, int* array, function* parent) {
   int i,j;
   int count=0;
   unsigned char byte;
@@ -117,10 +117,10 @@ int fill_bitmap(int ncols, float* row_data, float bitmap_value, int true, unsign
         array[i+j]=0;
       }
     }
-    if (true==1) {
+    if (true_==1) {
       bitmap[i/8]=byte;
     } else {
-      /* Invert the logic if true==false */
+      /* Invert the logic if true_==false */
       bitmap[i/8]=~byte;
     }
   }
