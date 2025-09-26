@@ -60,6 +60,6 @@
   void set_error_level(int val);
 
   /* NOTE: Your main function must define the MO_syslog routine */
-  extern void MO_syslog(int value, char* message, const function* const caller);
+  inline void MO_syslog(int value, char* message, const function* const caller) {};
 
 #endif
